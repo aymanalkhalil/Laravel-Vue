@@ -15,6 +15,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 </head>
 
 <body class="hold-transition sidebar-mini">
+
     <div class="wrapper" id="app">
 
         <!-- Navbar -->
@@ -40,6 +41,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <span class="brand-text font-weight-light">LaraVue</span>
             </a>
 
+            <vue-progress-bar></vue-progress-bar>
             <!-- Sidebar -->
             <div class="sidebar">
                 <!-- Sidebar user panel (optional) -->
@@ -68,8 +70,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                         data-accordion="false">
-                        <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
                         <li class="nav-item">
                             <router-link to="/dashboard" class="nav-link">
                                 <i class="nav-icon fas fa-th"></i>
@@ -81,7 +81,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </li>
 
 
-                        <li class="nav-item ">
+                        <li class="nav-item">
                             <a href="#" class="nav-link ">
                                 <i class="nav-icon fas fa-cog green"></i>
                                 <p>
@@ -114,12 +114,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </router-link>
                         </li>
                         <li class="nav-item">
-                            {{-- <a href="#" class="nav-link">
+                            <router-link to="/developer" class="nav-link">
+                                <i class="nav-icon fa fa-cogs"></i>
                                 <p>
-                                    Logout
+                                    Developer
+                                    {{-- <span class="right badge badge-danger">New</span> --}}
                                 </p>
-                            </a> --}}
-
+                            </router-link>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link " href="{{ route('logout') }}" onclick="event.preventDefault();
                                                                  document.getElementById('logout-form').submit();">
                                 <i class="nav-icon fa fa-power-off red"></i>
@@ -139,20 +142,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </div>
             <!-- /.sidebar -->
         </aside>
-
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
-
-
             <!-- Main content -->
             <div class="content">
                 <div class="container-fluid">
                     <router-view></router-view>
 
-                </div><!-- /.container-fluid -->
-            </div>
-            <!-- /.content -->
+                </div>
+            </div><!-- /.container-fluid -->
         </div>
+        <!-- /.content -->
         <!-- /.content-wrapper -->
 
 
@@ -168,6 +168,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             reserved.
         </footer>
     </div>
+
     <!-- ./wrapper -->
     <script src="/js/app.js"></script>
 </body>
